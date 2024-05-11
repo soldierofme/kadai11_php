@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ダッシュボード</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>ダッシュボード</h1>
+
+      <section>
+        <h2>重要な指標</h2>
+        <p id="totalEmployees">総従業員数:</p>
+        <p id="activeParticipants">アクティブ参加者数:</p>
+        <p id="healthImprovementRate">健康改善率:</p>
+      </section>
+
+      <section>
+        <h2>通知</h2>
+        <ul id="notifications"></ul>
+      </section>
+
+      <section>
+        <h2>健康ステータスの概要</h2>
+        <p id="averageSteps">平均歩数:</p>
+        <p id="averageSleepHours">平均睡眠時間:</p>
+      </section>
+
+      <section>
+        <h2>チームの健康進捗</h2>
+        <div id="teamProgressChart" style="width: 400px; height: 300px"></div>
+      </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script>
+      const mockData = {
+        // モックデータの定義
+      };
+
+      // 重要な指標、通知、健康ステータスの表示
+
+      // チームの健康進捗の表示
+      const teamProgressData = mockData.progressOverview.teamProgress.map(
+        (team) => ({
+          name: team.teamName,
+          data: [parseFloat(team.completionRate)],
+        })
+      );
+
+      const options = {
+        series: teamProgressData,
+        chart: {
+          type: "bar",
+          height: 350,
+        },
+        plotOptions: {
+          bar: {
+            horizontal: true,
+          },
+        },
+        xaxis: {
+          categories: ["完了率"],
+          labels: {
+            formatter: function (val) {
+              return val + "%";
+            },
+          },
+        },
+        dataLabels: {
+          enabled: false,
+        },
+      };
+
+      const chart = new ApexCharts(
+        document.querySelector("#teamProgressChart"),
+        options
+      );
+      chart.render();
+    </script>
+  </body>
+</html>

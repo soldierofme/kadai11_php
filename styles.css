@@ -1,0 +1,105 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #d7d8e6;
+  padding: 30px 20px;
+  color: white;
+}
+
+.logo {
+  height: 60px;
+  margin-right: 20px;
+}
+
+.sidebar {
+  width: 200px;
+  background: #d7d8e6;
+  color: white;
+  padding: 20px;
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li a {
+  display: block;
+  padding: 20px 10px;
+  text-decoration: none;
+  color: #333333;
+}
+
+li a:hover {
+  background-color: #fcd116;
+}
+
+.container {
+  max-width: 800px;
+  margin-top: 0;
+  /* 上部の空白をなくすために設定 */
+  margin-right: auto;
+  margin-bottom: 20px;
+  /* 元の下部マージンを維持 */
+  margin-left: auto;
+  padding: 20px;
+}
+
+h1,
+h2 {
+  color: #333;
+}
+
+section {
+  margin-bottom: 30px;
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+p {
+  margin: 10px 0;
+}
+
+#teamProgressChart {
+  width: 100%;
+  height: 300px;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #d7d8e6;
+  padding: 30px 20px;
+  color: white;
+  margin-bottom: 0;
+  /* 追加: 不要な空白をなくすため */
+}
+
+h1,
+h2 {
+  color: #333;
+  margin-top: 0;
+  /* 追加: h1やh2の上の空白をなくすため */
+}
+
+/* その他のスタイルは変更なし */
